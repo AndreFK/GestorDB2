@@ -22,7 +22,7 @@ namespace DB2Test
             string query = "select routinename, routinetype from syscat.routines where definer = 'USUARIO'";
 
             tool.fillDataGrid(this.dgv, query);
-            tool.fillComboDB(procName, query);
+            //tool.fillComboDB(procName, query);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,12 +31,12 @@ namespace DB2Test
         }
 
 
-        private void procName_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void procName_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "call " + procName.Text + "(?)";
 
             tool.callRout(dgv);
-        }
+        }*/
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
