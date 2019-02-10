@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BorrarIndices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarIndices.Designer.cs">
+      <DependentUpon>BorrarIndices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrarProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarProcedure.Designer.cs">
+      <DependentUpon>BorrarProcedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="BorrarTablas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sampleDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BorrarIndices.resx">
+      <DependentUpon>BorrarIndices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrarProcedure.resx">
+      <DependentUpon>BorrarProcedure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BorrarTablas.resx">
       <DependentUpon>BorrarTablas.cs</DependentUpon>
     </EmbeddedResource>

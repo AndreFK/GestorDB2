@@ -17,3 +17,5 @@ C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ListarIndices.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ListarTriggers.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ListarViews.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.BorrarIndices.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.BorrarProcedure.resources

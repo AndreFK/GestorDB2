@@ -59,7 +59,19 @@
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvpk = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvfk = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvind = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfk)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvind)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -137,31 +149,32 @@
             // listarToolStripMenuItem1
             // 
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
             // 
             // crearToolStripMenuItem1
             // 
             this.crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
-            this.crearToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem1.Text = "Crear";
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // borrarToolStripMenuItem1
             // 
             this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
-            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem1.Text = "Borrar";
+            this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.borrarToolStripMenuItem1_Click);
             // 
             // mostrarDDLToolStripMenuItem1
             // 
             this.mostrarDDLToolStripMenuItem1.Name = "mostrarDDLToolStripMenuItem1";
-            this.mostrarDDLToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.mostrarDDLToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mostrarDDLToolStripMenuItem1.Text = "Mostrar DDL";
             // 
             // proceduresToolStripMenuItem
@@ -293,16 +306,80 @@
             this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvpk);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(775, 147);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Llaves Primarias";
+            // 
+            // dgvpk
+            // 
+            this.dgvpk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpk.Location = new System.Drawing.Point(7, 20);
+            this.dgvpk.Name = "dgvpk";
+            this.dgvpk.Size = new System.Drawing.Size(762, 121);
+            this.dgvpk.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvfk);
+            this.groupBox2.Location = new System.Drawing.Point(12, 181);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(775, 158);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Llaves Foraneas";
+            // 
+            // dgvfk
+            // 
+            this.dgvfk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfk.Location = new System.Drawing.Point(7, 20);
+            this.dgvfk.Name = "dgvfk";
+            this.dgvfk.Size = new System.Drawing.Size(762, 132);
+            this.dgvfk.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvind);
+            this.groupBox3.Location = new System.Drawing.Point(12, 345);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(775, 162);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Indices";
+            // 
+            // dgvind
+            // 
+            this.dgvind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvind.Location = new System.Drawing.Point(7, 20);
+            this.dgvind.Name = "dgvind";
+            this.dgvind.Size = new System.Drawing.Size(762, 136);
+            this.dgvind.TabIndex = 0;
+            // 
             // ListarIndices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ListarIndices";
             this.Text = "ListarIndices";
+            this.Load += new System.EventHandler(this.ListarIndices_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfk)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvind)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +418,11 @@
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvpk;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvfk;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvind;
     }
 }

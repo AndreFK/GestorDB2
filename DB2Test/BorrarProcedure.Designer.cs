@@ -1,6 +1,6 @@
 ﻿namespace DB2Test
 {
-    partial class ListarProcedures
+    partial class BorrarProcedure
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tablasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,29 +59,16 @@
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.pname = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgv);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 411);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Listar";
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(7, 19);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(763, 386);
-            this.dgv.TabIndex = 0;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -96,7 +81,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
@@ -116,28 +101,24 @@
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem.Text = "Listar";
-            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.crearToolStripMenuItem.Text = "Crear";
-            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
             this.modificarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
             this.borrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
-            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
             // mostrarDDLToolStripMenuItem
             // 
@@ -162,14 +143,12 @@
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
-            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // crearToolStripMenuItem1
             // 
             this.crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
             this.crearToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.crearToolStripMenuItem1.Text = "Crear";
-            this.crearToolStripMenuItem1.Click += new System.EventHandler(this.crearToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 
@@ -204,32 +183,31 @@
             // listarToolStripMenuItem2
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
-            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
             // 
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.modificarToolStripMenuItem2.Text = "Modificar";
             // 
             // borrarToolStripMenuItem2
             // 
             this.borrarToolStripMenuItem2.Name = "borrarToolStripMenuItem2";
-            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.borrarToolStripMenuItem2.Text = "Borrar";
-            this.borrarToolStripMenuItem2.Click += new System.EventHandler(this.borrarToolStripMenuItem2_Click);
             // 
             // mostrarDDLToolStripMenuItem2
             // 
             this.mostrarDDLToolStripMenuItem2.Name = "mostrarDDLToolStripMenuItem2";
-            this.mostrarDDLToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.mostrarDDLToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.mostrarDDLToolStripMenuItem2.Text = "Mostrar DDL";
             // 
             // triggersToolStripMenuItem
@@ -249,7 +227,6 @@
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
             this.listarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem3.Text = "Listar";
-            this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 
             // crearToolStripMenuItem3
             // 
@@ -292,7 +269,6 @@
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
             this.listarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
-            this.listarToolStripMenuItem4.Click += new System.EventHandler(this.listarToolStripMenuItem4_Click);
             // 
             // crearToolStripMenuItem4
             // 
@@ -318,19 +294,77 @@
             this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
             this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
-            // ListarProcedures
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv);
+            this.groupBox1.Location = new System.Drawing.Point(326, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(462, 410);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Borrar";
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(7, 20);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(449, 384);
+            this.dgv.TabIndex = 0;
+            // 
+            // pname
+            // 
+            this.pname.FormattingEnabled = true;
+            this.pname.Location = new System.Drawing.Point(109, 48);
+            this.pname.Name = "pname";
+            this.pname.Size = new System.Drawing.Size(121, 21);
+            this.pname.TabIndex = 9;
+            this.pname.SelectedIndexChanged += new System.EventHandler(this.pname_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Nombre:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 199);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 233);
+            this.textBox1.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(134, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Borrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BorrarProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 447);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pname);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ListarProcedures";
-            this.Text = "Gestor";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "BorrarProcedure";
+            this.Text = "BorrarProcedure";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,8 +372,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tablasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
@@ -371,5 +403,11 @@
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.ComboBox pname;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

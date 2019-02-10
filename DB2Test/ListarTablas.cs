@@ -96,5 +96,12 @@ namespace DB2Test
             ListarIndices form = new ListarIndices();
             form.Show();
         }
+
+        private void listarToolStripMenuItem4_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ListarViews form = new ListarViews();
+            form.Show();
+        }
     }
 }

@@ -59,7 +59,11 @@
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -286,16 +290,37 @@
             this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
             this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(775, 410);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Listar";
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(7, 20);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(762, 384);
+            this.dgv.TabIndex = 0;
+            // 
             // ListarTriggers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ListarTriggers";
-            this.Text = "ListarTriggers";
+            this.Text = "Gestor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +359,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }

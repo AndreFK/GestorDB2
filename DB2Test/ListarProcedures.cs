@@ -19,24 +19,15 @@ namespace DB2Test
         {
             InitializeComponent();
 
-            string query = "select routinename, routinetype from syscat.routines where definer = 'USUARIO'";
+            string query = "select routinename as Nombre, routinetype as Tipo from syscat.routines where definer = 'USUARIO'";
 
             tool.fillDataGrid(this.dgv, query);
-            //tool.fillComboDB(procName, query);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-
-        /*private void procName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string query = "call " + procName.Text + "(?)";
-
-            tool.callRout(dgv);
-        }*/
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -94,6 +85,13 @@ namespace DB2Test
         private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void borrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BorrarProcedure form = new BorrarProcedure();
+            form.Show();
         }
     }
 }

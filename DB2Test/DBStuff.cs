@@ -141,6 +141,57 @@ namespace DB2Test
             return q;
         }
 
+        public string PoC(string name)
+        {
+            string v = "";
+
+            
+            DB2Command cmd = new DB2Command(" select routinetype from syscat.routines where routinename = '" + name +"'", connect);
+            try
+            {
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(0);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+            }
+            catch(DB2Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+            return v;
+        }
+
+        public string PoCDDL(string name)
+        {
+            string v = "";
+            DB2Command cmd = new DB2Command("select text from syscat.routines where routinename = '" + name + "'", connect);
+            try
+            {
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(int.MaxValue);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+            }
+            catch(DB2Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+            return v;
+        }
 
     }
 }

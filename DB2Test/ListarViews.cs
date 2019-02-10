@@ -12,9 +12,14 @@ namespace DB2Test
 {
     public partial class ListarViews : Form
     {
+
+        DBStuff tool = new DBStuff();
+
         public ListarViews()
         {
+            string q = "select viewname from syscat.views where owner = 'USUARIO'";
             InitializeComponent();
+            tool.fillDataGrid(dgv, q);
         }
 
         private void borrarToolStripMenuItem_Click(object sender, EventArgs e)

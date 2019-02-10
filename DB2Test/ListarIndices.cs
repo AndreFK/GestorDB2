@@ -12,9 +12,18 @@ namespace DB2Test
 {
     public partial class ListarIndices : Form
     {
+
+        DBStuff tool = new DBStuff();
+
         public ListarIndices()
         {
             InitializeComponent();
+            string q = "select colname as PK, tabname as Tabla from syscat.keycoluse where tabschema = 'USUARIO'";
+            string qfk = "select constname as FK, tabname as Tabla, reftabname as Referencia from syscat.references";
+            string qi = "select name as Indice, tbname as Tabla, uniquerule as Es_Unico from sysibm.sysindexes where tbcreator = 'USUARIO'";
+            tool.fillDataGrid(dgvpk,q);
+            tool.fillDataGrid(dgvfk, qfk);
+            tool.fillDataGrid(dgvind, qi);
         }
 
         private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,6 +71,18 @@ namespace DB2Test
         {
             this.Hide();
             ListarProcedures form = new ListarProcedures();
+            form.Show();
+        }
+
+        private void ListarIndices_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BorrarIndices form = new BorrarIndices();
             form.Show();
         }
     }

@@ -12,9 +12,12 @@ namespace DB2Test
 {
     public partial class ListarTriggers : Form
     {
+        DBStuff tool = new DBStuff();
         public ListarTriggers()
         {
             InitializeComponent();
+            string q = "select trigname as Nombre from syscat.triggers where owner = 'USUARIO'";
+            tool.fillDataGrid(dgv,q);
         }
 
         private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
