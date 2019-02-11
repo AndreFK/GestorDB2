@@ -53,7 +53,7 @@ namespace DB2Test
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 d.DataSource = ds.Tables[0];
-
+               
                 d.Update();
                 d.Refresh();
                 connect.Close();
@@ -134,6 +134,121 @@ namespace DB2Test
             return v;
         }
 
+        public string isInd(string col, string tab)
+        {
+            if (ispk(col, tab))
+            {
+                return "PK";
+            }
+            else if (isfk(col, tab))
+            {
+                return "FK";
+            }
+            else if (isindex(col, tab))
+            {
+                return "Index";
+            }
+            else return "No";
+        }
+
+        private bool ispk(string col, string tab)
+        {
+            string v = "";
+            try
+            {
+                DB2Command cmd = new DB2Command("select colname from syscat.keycoluse where colname = '" + col + "' and tabname = '" + tab + "'", connect);
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(0);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+            if (v == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool isfk(string col, string tab)
+        {
+            string v = "";
+            try
+            {
+                DB2Command cmd = new DB2Command("select constname from syscat.references where constname = '" + col + "_FK' and tabname = '" + tab + "'", connect);
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(0);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+            if (v == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool isindex(string col, string tab)
+        {
+            string v = "";
+            try
+            {
+                DB2Command cmd = new DB2Command("select name from sysibm.sysindexes where  name = '" + col + "' and tbname = '" + tab + "'", connect);
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(0);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+            if (v == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+
         public string getValue(string v, string tab)
         {
             string q = "";
@@ -171,7 +286,8 @@ namespace DB2Test
         public string PoCDDL(string name)
         {
             string v = "";
-            DB2Command cmd = new DB2Command("select text from syscat.routines where routinename = '" + name + "'", connect);
+            DB2Command cmd = new DB2Command("select substr(text, 1, 80) from syscat.routines where routinename = '"+ name + "'", connect);
+            cmd.CommandType = CommandType.Text;
             try
             {
                 connect.Open();
@@ -179,7 +295,7 @@ namespace DB2Test
                 {
                     while (dr.Read())
                     {
-                        v = dr.GetString(int.MaxValue);
+                        v = dr.GetString(0);
                     }
                     dr.Close();
                 }

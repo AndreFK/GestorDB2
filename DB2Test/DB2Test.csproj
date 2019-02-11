@@ -64,6 +64,24 @@
     <Compile Include="BorrarTablas.Designer.cs">
       <DependentUpon>BorrarTablas.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrarTriggers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarTriggers.Designer.cs">
+      <DependentUpon>BorrarTriggers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrarViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarViews.Designer.cs">
+      <DependentUpon>BorrarViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearIndice.Designer.cs">
+      <DependentUpon>CrearIndice.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBStuff.cs" />
     <Compile Include="ListarIndices.cs">
       <SubType>Form</SubType>
@@ -122,6 +140,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrarTablas.resx">
       <DependentUpon>BorrarTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrarTriggers.resx">
+      <DependentUpon>BorrarTriggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrarViews.resx">
+      <DependentUpon>BorrarViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearIndice.resx">
+      <DependentUpon>CrearIndice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarIndices.resx">
       <DependentUpon>ListarIndices.cs</DependentUpon>

@@ -26,12 +26,13 @@ namespace DB2Test
         private void pname_SelectedIndexChanged(object sender, EventArgs e)
         {
             string v = tool.PoC(pname.Text);
-            this.textBox1.Text = v;
+            string q = "select routinename as Nombre, text as Script from syscat.routines where routinename = '"+ pname.Text +"'";
+            tool.fillDataGrid(dataGridView1, q);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string queryc = "select routinename as Nombre, routinetype as Tipo from syscat.routines where definer = 'USUARIO'";
+            string queryc = "select routinename as Nombre, routinetype as Tipo, from syscat.routines where definer = 'USUARIO'";
             string q = "select routinename from syscat.routines where definer = 'USUARIO'";
             if (string.IsNullOrWhiteSpace(pname.Text))
             {
@@ -43,16 +44,33 @@ namespace DB2Test
                 if(type == "P")
                 {
                     string query = "drop procedure " + pname.Text;
+                    System.Windows.Forms.MessageBox.Show(pname.Text + " borrado");
                     tool.sendCmd(query);
-                    string ddl = tool.PoCDDL(pname.Text);
-                    textBox1.Text = ddl;
+                   
+                   // textBox1.Text = ddl;
                     pname.Text = "";
                     pname.Items.Clear();
                     dgv.DataSource = null;
                     dgv.Update();
                     dgv.Refresh();
-                    tool.fillComboDB(pname, queryc);
-                    tool.fillDataGrid(dgv, q);
+                    tool.fillComboDB(pname, q);
+                    tool.fillDataGrid(dgv, queryc);
+                }
+                else
+                {
+                    string query = "drop function " + pname.Text;
+                    System.Windows.Forms.MessageBox.Show(pname.Text + " borrado");
+                    tool.sendCmd(query);
+                    
+                   // string ddl = tool.PoCDDL(pname.Text);
+                   // textBox1.Text = ddl;
+                    pname.Text = "";
+                    pname.Items.Clear();
+                    dgv.DataSource = null;
+                    dgv.Update();
+                    dgv.Refresh();
+                    tool.fillComboDB(pname, q);
+                    tool.fillDataGrid(dgv, queryc);
                 }
             }
         }

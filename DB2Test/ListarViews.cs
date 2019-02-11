@@ -17,7 +17,7 @@ namespace DB2Test
 
         public ListarViews()
         {
-            string q = "select viewname from syscat.views where owner = 'USUARIO'";
+            string q = "select viewname as Nombre, text as DDL from syscat.views where owner = 'USUARIO'";
             InitializeComponent();
             tool.fillDataGrid(dgv, q);
         }

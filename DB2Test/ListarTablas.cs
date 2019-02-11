@@ -97,11 +97,26 @@ namespace DB2Test
             form.Show();
         }
 
-        private void listarToolStripMenuItem4_Click_1(object sender, EventArgs e)
+        private void borrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BorrarTriggers form = new BorrarTriggers();
+            form.Show();
+        }
+
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearIndice form = new CrearIndice();
+            form.Show();
+        }
+
+
+        /*private void listarToolStripMenuItem4_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             ListarViews form = new ListarViews();
             form.Show();
-        }
+        }*/
     }
 }

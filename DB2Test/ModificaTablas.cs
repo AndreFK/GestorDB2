@@ -73,7 +73,7 @@ namespace DB2Test
             else
             {
                string query = updateQuery(tablesNames, colName, valorViejo, valorNuevo);
-               System.Windows.Forms.MessageBox.Show(query);
+               //System.Windows.Forms.MessageBox.Show(query);
                tool.sendCmd(query);
            }
             resetall();

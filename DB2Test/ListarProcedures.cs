@@ -19,7 +19,7 @@ namespace DB2Test
         {
             InitializeComponent();
 
-            string query = "select routinename as Nombre, routinetype as Tipo from syscat.routines where definer = 'USUARIO'";
+            string query = "select routinename as Nombre, routinetype as Tipo, text as DDL from syscat.routines where definer = 'USUARIO'";
 
             tool.fillDataGrid(this.dgv, query);
         }

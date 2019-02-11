@@ -19,8 +19,8 @@ namespace DB2Test
         {
             InitializeComponent();
             string q = "select colname as PK, tabname as Tabla from syscat.keycoluse where tabschema = 'USUARIO'";
-            string qfk = "select constname as FK, tabname as Tabla, reftabname as Referencia from syscat.references";
-            string qi = "select name as Indice, tbname as Tabla, uniquerule as Es_Unico from sysibm.sysindexes where tbcreator = 'USUARIO'";
+            string qfk = "select constname as FK, tabname as Tabla, refkeyname as Col_Ref, reftabname as Tabla_Ref from syscat.references";
+            string qi = "select name as Indice, tbname as Tabla, uniquerule as Es_Unico from sysibm.sysindexes where tbcreator = 'USUARIO' and uniquerule = 'U'";
             tool.fillDataGrid(dgvpk,q);
             tool.fillDataGrid(dgvfk, qfk);
             tool.fillDataGrid(dgvind, qi);
