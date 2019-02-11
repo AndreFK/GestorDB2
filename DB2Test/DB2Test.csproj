@@ -132,6 +132,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sampleDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ScriptIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptIndice.Designer.cs">
+      <DependentUpon>ScriptIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptTabla.Designer.cs">
+      <DependentUpon>ScriptTabla.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BorrarIndices.resx">
       <DependentUpon>BorrarIndices.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +192,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ScriptIndice.resx">
+      <DependentUpon>ScriptIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptTabla.resx">
+      <DependentUpon>ScriptTabla.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

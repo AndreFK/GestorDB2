@@ -16,7 +16,7 @@ namespace DB2Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CrearIndice());
+            Application.Run(new ScriptIndice());
         }
     }
 }

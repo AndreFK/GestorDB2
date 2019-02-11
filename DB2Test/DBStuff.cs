@@ -183,6 +183,36 @@ namespace DB2Test
             }
         }
 
+        public string scriptFK(string col, string tab)
+        {
+            string v = "";
+
+            string cref = "";
+            string tref = "";
+
+           if(!isfk(col, tab))
+            {
+                return "Nada";
+            }
+                DB2Command cmd = new DB2Command("select ref.constname as FK, ref.tabname as Tabla, key.colname as Ref_Col, key.tabname as Ref_Tabla from syscat.keycoluse as key inner join syscat.references as ref on key.constname = ref.refkeyname where ref.constname = '" + col + "_FK' and ref.tabname = '" + tab + "'", connect);
+                connect.Open();
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        cref = dr.GetString(2);
+                        tref = dr.GetString(3);
+                    }
+                    dr.Close();
+                }
+                connect.Close();
+                v = "alter table " + tab + " add constraint " + col + "_FK foreign key (" + col + ") references " + tref + " (" + cref + ") not enforced";
+                return v;
+            
+        }
+
+        //Hacer scrippk e index HOY
+
         public bool isfk(string col, string tab)
         {
             string v = "";
