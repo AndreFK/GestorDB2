@@ -10,35 +10,33 @@ using System.Windows.Forms;
 
 namespace DB2Test
 {
-    public partial class BorrarTablas : Form
+    public partial class ModificaViews : Form
     {
+
         DBStuff tool = new DBStuff();
 
-        public BorrarTablas()
+        public ModificaViews()
         {
             InitializeComponent();
-            string query = "select name from sysibm.systables where creator  = 'USUARIO'";
-            tool.fillComboDB(this.tabName, query);
-            tool.fillDataGrid(dgv, query);
+            string q = "select viewname from syscat.views where owner = 'USUARIO'";
+            string qdg ="select viewname as Nombre, text as DDL from syscat.views where owner = 'USUARIO'";
+
+            tool.fillComboDB(pk, q);
+            tool.fillDataGrid(dgvpk, qdg);
         }
 
-        private void borrarBtn_Click(object sender, EventArgs e)
+        private void pk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tabName.Text))
-            {
+            textBox1.Text = tool.ddl("select text as DDL from syscat.views where owner = 'USUARIO' and viewname = '" + textBox1.Text + "'");
+        }
 
-                string query = "drop table " + tabName.Text;
-                System.Windows.Forms.MessageBox.Show("Tabla " + tabName.Text + " ha sido borrada");
-                tool.sendCmd(query);
-                tabName.Text = "";
-                tool.fillComboDB(tabName, "select name from sysibm.systables where creator  = 'USUARIO'");
-                tool.fillDataGrid(dgv, "select name from sysibm.systables where creator  = 'USUARIO'");
-
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("No ha seleccionado una tabla");
-            }
+        private void addpk_Click(object sender, EventArgs e)
+        {
+            string tab = "select text as DDL from syscat.views where owner = 'USUARIO' viewname = '" + textBox1.Text + "'";
+            string query = "drop view " + textBox1.Text;
+            tool.dropCmd(query, tool.ddl(tab));
+            tool.sendCmd(textBox1.Text);
+            tool.fillDataGrid(dgvpk, "select viewname as Nombre, text as DDL from syscat.views where owner = 'USUARIO'");
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)

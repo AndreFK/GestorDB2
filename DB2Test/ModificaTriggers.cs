@@ -10,35 +10,31 @@ using System.Windows.Forms;
 
 namespace DB2Test
 {
-    public partial class BorrarTablas : Form
+    public partial class ModificaTriggers : Form
     {
         DBStuff tool = new DBStuff();
-
-        public BorrarTablas()
+        public ModificaTriggers()
         {
             InitializeComponent();
-            string query = "select name from sysibm.systables where creator  = 'USUARIO'";
-            tool.fillComboDB(this.tabName, query);
-            tool.fillDataGrid(dgv, query);
+            string q = "select trigname as Nombre, text as DDL from syscat.triggers where owner = 'USUARIO'";
+            string qe = "select trigname from syscat.triggers where owner = 'USUARIO'";
+
+            tool.fillComboDB(pk, qe);
+            tool.fillDataGrid(dgvpk, q);
         }
 
-        private void borrarBtn_Click(object sender, EventArgs e)
+        private void addpk_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tabName.Text))
-            {
+            string tab = "select text as DDL from syscat.triggers where owner = 'USUARIO' and trigname = '" + textBox1.Text + "'";
+            string query = "drop trigger " + textBox1.Text;
+            tool.dropCmd(query, tool.ddl(tab));
+            tool.sendCmd(textBox1.Text);
+            tool.fillDataGrid(dgvpk, "select trigname as Nombre, text as DDL from syscat.triggers where owner = 'USUARIO'");
+        }
 
-                string query = "drop table " + tabName.Text;
-                System.Windows.Forms.MessageBox.Show("Tabla " + tabName.Text + " ha sido borrada");
-                tool.sendCmd(query);
-                tabName.Text = "";
-                tool.fillComboDB(tabName, "select name from sysibm.systables where creator  = 'USUARIO'");
-                tool.fillDataGrid(dgv, "select name from sysibm.systables where creator  = 'USUARIO'");
-
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("No ha seleccionado una tabla");
-            }
+        private void pk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = tool.ddl("select text as DDL from syscat.triggers where owner = 'USUARIO' and trigname = '" + textBox1.Text + "'");
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)

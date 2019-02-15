@@ -46,20 +46,18 @@
             this.crearToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.triggersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.colpk = new System.Windows.Forms.ComboBox();
@@ -67,18 +65,17 @@
             this.addpk = new System.Windows.Forms.Button();
             this.dgvpk = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.colref = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabref = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.colfk = new System.Windows.Forms.ComboBox();
             this.tabfk = new System.Windows.Forms.ComboBox();
             this.addfk = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.colref = new System.Windows.Forms.ComboBox();
-            this.tabref = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -125,35 +122,35 @@
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem.Text = "Listar";
             this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            this.crearToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem.Text = "Crear";
             this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
             // mostrarDDLToolStripMenuItem
             // 
             this.mostrarDDLToolStripMenuItem.Name = "mostrarDDLToolStripMenuItem";
-            this.mostrarDDLToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.mostrarDDLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostrarDDLToolStripMenuItem.Text = "Mostrar DDL";
             this.mostrarDDLToolStripMenuItem.Click += new System.EventHandler(this.mostrarDDLToolStripMenuItem_Click);
             // 
@@ -210,8 +207,7 @@
             this.listarToolStripMenuItem2,
             this.crearToolStripMenuItem2,
             this.modificarToolStripMenuItem2,
-            this.borrarToolStripMenuItem2,
-            this.mostrarDDLToolStripMenuItem2});
+            this.borrarToolStripMenuItem2});
             this.proceduresToolStripMenuItem.Name = "proceduresToolStripMenuItem";
             this.proceduresToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.proceduresToolStripMenuItem.Text = "Procedures";
@@ -219,36 +215,30 @@
             // listarToolStripMenuItem2
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
-            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
             this.listarToolStripMenuItem2.Click += new System.EventHandler(this.listarToolStripMenuItem2_Click);
             // 
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             this.crearToolStripMenuItem2.Click += new System.EventHandler(this.crearToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem2.Text = "Modificar";
             this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.modificarToolStripMenuItem2_Click);
             // 
             // borrarToolStripMenuItem2
             // 
             this.borrarToolStripMenuItem2.Name = "borrarToolStripMenuItem2";
-            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem2.Text = "Borrar";
             this.borrarToolStripMenuItem2.Click += new System.EventHandler(this.borrarToolStripMenuItem2_Click);
-            // 
-            // mostrarDDLToolStripMenuItem2
-            // 
-            this.mostrarDDLToolStripMenuItem2.Name = "mostrarDDLToolStripMenuItem2";
-            this.mostrarDDLToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem2.Text = "Mostrar DDL";
             // 
             // triggersToolStripMenuItem
             // 
@@ -256,8 +246,7 @@
             this.listarToolStripMenuItem3,
             this.crearToolStripMenuItem3,
             this.modificarToolStripMenuItem3,
-            this.borrarToolStripMenuItem3,
-            this.mostrarDDLToolStripMenuItem3});
+            this.borrarToolStripMenuItem3});
             this.triggersToolStripMenuItem.Name = "triggersToolStripMenuItem";
             this.triggersToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.triggersToolStripMenuItem.Text = "Triggers";
@@ -265,36 +254,30 @@
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem3.Text = "Listar";
             this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 
             // crearToolStripMenuItem3
             // 
             this.crearToolStripMenuItem3.Name = "crearToolStripMenuItem3";
-            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem3.Text = "Crear";
             this.crearToolStripMenuItem3.Click += new System.EventHandler(this.crearToolStripMenuItem3_Click);
             // 
             // modificarToolStripMenuItem3
             // 
             this.modificarToolStripMenuItem3.Name = "modificarToolStripMenuItem3";
-            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem3.Text = "Modificar";
             this.modificarToolStripMenuItem3.Click += new System.EventHandler(this.modificarToolStripMenuItem3_Click);
             // 
             // borrarToolStripMenuItem3
             // 
             this.borrarToolStripMenuItem3.Name = "borrarToolStripMenuItem3";
-            this.borrarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem3.Text = "Borrar";
             this.borrarToolStripMenuItem3.Click += new System.EventHandler(this.borrarToolStripMenuItem3_Click);
-            // 
-            // mostrarDDLToolStripMenuItem3
-            // 
-            this.mostrarDDLToolStripMenuItem3.Name = "mostrarDDLToolStripMenuItem3";
-            this.mostrarDDLToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem3.Text = "Mostrar DDL";
             // 
             // viewsToolStripMenuItem
             // 
@@ -302,8 +285,7 @@
             this.listarToolStripMenuItem4,
             this.crearToolStripMenuItem4,
             this.modificarToolStripMenuItem4,
-            this.borrarToolStripMenuItem4,
-            this.mostrarDDLToolStripMenuItem4});
+            this.borrarToolStripMenuItem4});
             this.viewsToolStripMenuItem.Name = "viewsToolStripMenuItem";
             this.viewsToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.viewsToolStripMenuItem.Text = "Views";
@@ -311,36 +293,30 @@
             // listarToolStripMenuItem4
             // 
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
-            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
             this.listarToolStripMenuItem4.Click += new System.EventHandler(this.listarToolStripMenuItem4_Click);
             // 
             // crearToolStripMenuItem4
             // 
             this.crearToolStripMenuItem4.Name = "crearToolStripMenuItem4";
-            this.crearToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem4.Text = "Crear";
             this.crearToolStripMenuItem4.Click += new System.EventHandler(this.crearToolStripMenuItem4_Click);
             // 
             // modificarToolStripMenuItem4
             // 
             this.modificarToolStripMenuItem4.Name = "modificarToolStripMenuItem4";
-            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem4.Text = "Modificar";
             this.modificarToolStripMenuItem4.Click += new System.EventHandler(this.modificarToolStripMenuItem4_Click);
             // 
             // borrarToolStripMenuItem4
             // 
             this.borrarToolStripMenuItem4.Name = "borrarToolStripMenuItem4";
-            this.borrarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem4.Text = "Borrar";
             this.borrarToolStripMenuItem4.Click += new System.EventHandler(this.borrarToolStripMenuItem4_Click);
-            // 
-            // mostrarDDLToolStripMenuItem4
-            // 
-            this.mostrarDDLToolStripMenuItem4.Name = "mostrarDDLToolStripMenuItem4";
-            this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
             // groupBox1
             // 
@@ -357,6 +333,13 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PK";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 5;
             // 
             // label2
             // 
@@ -430,6 +413,46 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FK";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 127);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 9;
+            // 
+            // colref
+            // 
+            this.colref.FormattingEnabled = true;
+            this.colref.Location = new System.Drawing.Point(89, 100);
+            this.colref.Name = "colref";
+            this.colref.Size = new System.Drawing.Size(121, 21);
+            this.colref.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(8, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Columna Ref:";
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(8, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Tabla Ref:  ";
+            // 
+            // tabref
+            // 
+            this.tabref.FormattingEnabled = true;
+            this.tabref.Location = new System.Drawing.Point(89, 73);
+            this.tabref.Name = "tabref";
+            this.tabref.Size = new System.Drawing.Size(121, 21);
+            this.tabref.TabIndex = 6;
+            this.tabref.SelectedIndexChanged += new System.EventHandler(this.tabref_SelectedIndexChanged);
+            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(8, 49);
@@ -481,53 +504,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 131);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(8, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Columna Ref:";
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(8, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Tabla Ref:  ";
-            // 
-            // colref
-            // 
-            this.colref.FormattingEnabled = true;
-            this.colref.Location = new System.Drawing.Point(89, 100);
-            this.colref.Name = "colref";
-            this.colref.Size = new System.Drawing.Size(121, 21);
-            this.colref.TabIndex = 7;
-            // 
-            // tabref
-            // 
-            this.tabref.FormattingEnabled = true;
-            this.tabref.Location = new System.Drawing.Point(89, 73);
-            this.tabref.Name = "tabref";
-            this.tabref.Size = new System.Drawing.Size(121, 21);
-            this.tabref.TabIndex = 6;
-            this.tabref.SelectedIndexChanged += new System.EventHandler(this.tabref_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(0, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(6, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
             // 
             // groupBox3
             // 
@@ -650,19 +626,16 @@
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem triggersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem viewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvpk;
         private System.Windows.Forms.Label label2;

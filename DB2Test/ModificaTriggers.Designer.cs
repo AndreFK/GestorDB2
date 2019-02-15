@@ -1,6 +1,6 @@
 ﻿namespace DB2Test
 {
-    partial class ScriptIndice
+    partial class ModificaTriggers
     {
         /// <summary>
         /// Required designer variable.
@@ -56,20 +56,15 @@
             this.crearToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvpk = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvind = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pk = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.addpk = new System.Windows.Forms.Button();
+            this.dgvpk = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvind)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -82,8 +77,8 @@
             this.viewsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 24);
-            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
@@ -234,7 +229,7 @@
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
             this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.listarToolStripMenuItem3.Text = "Listar";
+            this.listarToolStripMenuItem3.Text = "Listar ";
             this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 
             // crearToolStripMenuItem3
@@ -297,91 +292,77 @@
             this.borrarToolStripMenuItem4.Text = "Borrar";
             this.borrarToolStripMenuItem4.Click += new System.EventHandler(this.borrarToolStripMenuItem4_Click);
             // 
-            // dataGridView1
+            // groupBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1109, 144);
-            this.dataGridView1.TabIndex = 9;
+            this.groupBox1.Controls.Add(this.pk);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.addpk);
+            this.groupBox1.Controls.Add(this.dgvpk);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 158);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Triggers";
             // 
-            // button1
+            // pk
             // 
-            this.button1.Location = new System.Drawing.Point(24, 556);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Mostrar Scipts";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pk.FormattingEnabled = true;
+            this.pk.Location = new System.Drawing.Point(78, 19);
+            this.pk.Name = "pk";
+            this.pk.Size = new System.Drawing.Size(121, 21);
+            this.pk.TabIndex = 6;
+            this.pk.SelectedIndexChanged += new System.EventHandler(this.pk_SelectedIndexChanged);
             // 
-            // groupBox2
+            // textBox1
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(18, 212);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1121, 169);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "FK";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.textBox1.Location = new System.Drawing.Point(11, 46);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(199, 74);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(8, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Trigger:";
+            // 
+            // addpk
+            // 
+            this.addpk.Location = new System.Drawing.Point(11, 126);
+            this.addpk.Name = "addpk";
+            this.addpk.Size = new System.Drawing.Size(75, 23);
+            this.addpk.TabIndex = 1;
+            this.addpk.Text = "Crear";
+            this.addpk.UseVisualStyleBackColor = true;
+            this.addpk.Click += new System.EventHandler(this.addpk_Click);
             // 
             // dgvpk
             // 
             this.dgvpk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpk.Location = new System.Drawing.Point(6, 19);
+            this.dgvpk.Location = new System.Drawing.Point(225, 19);
             this.dgvpk.Name = "dgvpk";
-            this.dgvpk.Size = new System.Drawing.Size(1109, 144);
-            this.dgvpk.TabIndex = 9;
+            this.dgvpk.Size = new System.Drawing.Size(545, 101);
+            this.dgvpk.TabIndex = 0;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvpk);
-            this.groupBox1.Location = new System.Drawing.Point(18, 37);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1121, 169);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "PK";
-            // 
-            // dgvind
-            // 
-            this.dgvind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvind.Location = new System.Drawing.Point(6, 19);
-            this.dgvind.Name = "dgvind";
-            this.dgvind.Size = new System.Drawing.Size(1109, 144);
-            this.dgvind.TabIndex = 9;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvind);
-            this.groupBox3.Location = new System.Drawing.Point(18, 387);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1121, 169);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Indice";
-            // 
-            // ScriptIndice
+            // ModificaTriggers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 589);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(800, 198);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.groupBox2);
-            this.Name = "ScriptIndice";
-            this.Text = "ScriptIndice";
+            this.Name = "ModificaTriggers";
+            this.Text = "Gestor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvind)).EndInit();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,12 +398,11 @@
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvpk;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvind;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox pk;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button addpk;
+        private System.Windows.Forms.DataGridView dgvpk;
     }
 }

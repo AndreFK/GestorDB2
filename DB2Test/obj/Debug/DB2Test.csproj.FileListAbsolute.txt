@@ -27,3 +27,7 @@ C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ModificaInidces.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.CrearProcedure.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.CrearTrigger.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.CrearView.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ModificaProcedures.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ModificaTriggers.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\DB2Test\DB2Test\obj\Debug\DB2Test.ModificaViews.resources

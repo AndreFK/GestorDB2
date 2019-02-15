@@ -10,35 +10,53 @@ using System.Windows.Forms;
 
 namespace DB2Test
 {
-    public partial class BorrarTablas : Form
+    public partial class ModificaProcedures : Form
     {
+
         DBStuff tool = new DBStuff();
 
-        public BorrarTablas()
+        public ModificaProcedures()
         {
             InitializeComponent();
-            string query = "select name from sysibm.systables where creator  = 'USUARIO'";
-            tool.fillComboDB(this.tabName, query);
-            tool.fillDataGrid(dgv, query);
+            string query = "select routinename as Nombre, routinetype as Tipo, text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'P'";
+            string q = "select routinename as Nombre, routinetype as Tipo, text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'F'";
+
+            string queryc = "select routinename from syscat.routines where definer = 'USUARIO' and routinetype = 'P'";
+            string qc = "select routinename from syscat.routines where definer = 'USUARIO' and routinetype = 'F'";
+
+            tool.fillDataGrid(dgvpk, query);
+            tool.fillDataGrid(dataGridView1, q);
+
+            tool.fillComboDB(pk, queryc);
+            tool.fillComboDB(fk, qc);
         }
 
-        private void borrarBtn_Click(object sender, EventArgs e)
+        private void addpk_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tabName.Text))
-            {
+            string tab = "select text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'P' and routinename = '"+ textBox1.Text+"'";
+            string query = "drop procedure " + textBox1.Text;
+            tool.dropCmd(query, tool.ddl(tab));
+            tool.sendCmd(textBox1.Text);
+            tool.fillDataGrid(dgvpk, "select routinename as Nombre, routinetype as Tipo, text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'P'");
+        }
 
-                string query = "drop table " + tabName.Text;
-                System.Windows.Forms.MessageBox.Show("Tabla " + tabName.Text + " ha sido borrada");
-                tool.sendCmd(query);
-                tabName.Text = "";
-                tool.fillComboDB(tabName, "select name from sysibm.systables where creator  = 'USUARIO'");
-                tool.fillDataGrid(dgv, "select name from sysibm.systables where creator  = 'USUARIO'");
+        private void addfk_Click(object sender, EventArgs e)
+        {
+            string tab = "select text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'F' and routinename = '" + textBox2.Text + "'";
+            string query = "drop function " + textBox2.Text;
+            tool.dropCmd(query, tool.ddl(tab));
+            tool.sendCmd(textBox1.Text);
+            tool.fillDataGrid(dgvpk, "select routinename as Nombre, routinetype as Tipo, text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'F'");
+        }
 
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("No ha seleccionado una tabla");
-            }
+        private void pk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = tool.ddl("select text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'P' and routinename = '"+ textBox1.Text+"'");
+        }
+
+        private void fk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = tool.ddl("select text as DDL from syscat.routines where definer = 'USUARIO' and routinetype = 'F' and routinename = '" + textBox2.Text + "'");
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)

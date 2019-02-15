@@ -46,19 +46,16 @@
             this.crearToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.triggersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
@@ -95,31 +92,32 @@
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            this.crearToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem.Text = "Crear";
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             // 
             // mostrarDDLToolStripMenuItem
             // 
             this.mostrarDDLToolStripMenuItem.Name = "mostrarDDLToolStripMenuItem";
-            this.mostrarDDLToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.mostrarDDLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostrarDDLToolStripMenuItem.Text = "Mostrar DDL";
             // 
             // indicesToolStripMenuItem
@@ -170,8 +168,7 @@
             this.listarToolStripMenuItem2,
             this.crearToolStripMenuItem2,
             this.modificarToolStripMenuItem2,
-            this.borrarToolStripMenuItem2,
-            this.mostrarDDLToolStripMenuItem2});
+            this.borrarToolStripMenuItem2});
             this.proceduresToolStripMenuItem.Name = "proceduresToolStripMenuItem";
             this.proceduresToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.proceduresToolStripMenuItem.Text = "Procedures";
@@ -179,32 +176,26 @@
             // listarToolStripMenuItem2
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
-            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
             // 
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem2.Text = "Modificar";
             // 
             // borrarToolStripMenuItem2
             // 
             this.borrarToolStripMenuItem2.Name = "borrarToolStripMenuItem2";
-            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem2.Text = "Borrar";
-            // 
-            // mostrarDDLToolStripMenuItem2
-            // 
-            this.mostrarDDLToolStripMenuItem2.Name = "mostrarDDLToolStripMenuItem2";
-            this.mostrarDDLToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem2.Text = "Mostrar DDL";
             // 
             // triggersToolStripMenuItem
             // 
@@ -212,8 +203,7 @@
             this.listarToolStripMenuItem3,
             this.crearToolStripMenuItem3,
             this.modificarToolStripMenuItem3,
-            this.borrarToolStripMenuItem3,
-            this.mostrarDDLToolStripMenuItem3});
+            this.borrarToolStripMenuItem3});
             this.triggersToolStripMenuItem.Name = "triggersToolStripMenuItem";
             this.triggersToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.triggersToolStripMenuItem.Text = "Triggers";
@@ -221,32 +211,26 @@
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.listarToolStripMenuItem3.Text = "Listar";
             // 
             // crearToolStripMenuItem3
             // 
             this.crearToolStripMenuItem3.Name = "crearToolStripMenuItem3";
-            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.crearToolStripMenuItem3.Text = "Crear";
             // 
             // modificarToolStripMenuItem3
             // 
             this.modificarToolStripMenuItem3.Name = "modificarToolStripMenuItem3";
-            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem3.Text = "Modificar";
             // 
             // borrarToolStripMenuItem3
             // 
             this.borrarToolStripMenuItem3.Name = "borrarToolStripMenuItem3";
-            this.borrarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem3.Text = "Borrar";
-            // 
-            // mostrarDDLToolStripMenuItem3
-            // 
-            this.mostrarDDLToolStripMenuItem3.Name = "mostrarDDLToolStripMenuItem3";
-            this.mostrarDDLToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem3.Text = "Mostrar DDL";
             // 
             // viewsToolStripMenuItem
             // 
@@ -254,8 +238,7 @@
             this.listarToolStripMenuItem4,
             this.crearToolStripMenuItem4,
             this.modificarToolStripMenuItem4,
-            this.borrarToolStripMenuItem4,
-            this.mostrarDDLToolStripMenuItem4});
+            this.borrarToolStripMenuItem4});
             this.viewsToolStripMenuItem.Name = "viewsToolStripMenuItem";
             this.viewsToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.viewsToolStripMenuItem.Text = "Views";
@@ -263,32 +246,26 @@
             // listarToolStripMenuItem4
             // 
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
-            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(125, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
             // 
             // crearToolStripMenuItem4
             // 
             this.crearToolStripMenuItem4.Name = "crearToolStripMenuItem4";
-            this.crearToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.crearToolStripMenuItem4.Size = new System.Drawing.Size(125, 22);
             this.crearToolStripMenuItem4.Text = "Crear";
             // 
             // modificarToolStripMenuItem4
             // 
             this.modificarToolStripMenuItem4.Name = "modificarToolStripMenuItem4";
-            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem4.Text = "Modificar";
             // 
             // borrarToolStripMenuItem4
             // 
             this.borrarToolStripMenuItem4.Name = "borrarToolStripMenuItem4";
-            this.borrarToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
+            this.borrarToolStripMenuItem4.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem4.Text = "Borrar";
-            // 
-            // mostrarDDLToolStripMenuItem4
-            // 
-            this.mostrarDDLToolStripMenuItem4.Name = "mostrarDDLToolStripMenuItem4";
-            this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
-            this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
             // groupBox1
             // 
@@ -346,19 +323,16 @@
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem triggersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem viewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv;
     }

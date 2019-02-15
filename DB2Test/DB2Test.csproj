@@ -94,6 +94,12 @@
     <Compile Include="CrearTrigger.Designer.cs">
       <DependentUpon>CrearTrigger.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearView.Designer.cs">
+      <DependentUpon>CrearView.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBStuff.cs" />
     <Compile Include="ListarIndices.cs">
       <SubType>Form</SubType>
@@ -137,11 +143,29 @@
     <Compile Include="ModificaInidces.Designer.cs">
       <DependentUpon>ModificaInidces.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificaProcedures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaProcedures.Designer.cs">
+      <DependentUpon>ModificaProcedures.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificaTablas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificaTablas.Designer.cs">
       <DependentUpon>ModificaTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaTriggers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaTriggers.Designer.cs">
+      <DependentUpon>ModificaTriggers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaViews.Designer.cs">
+      <DependentUpon>ModificaViews.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -187,6 +211,9 @@
     <EmbeddedResource Include="CrearTrigger.resx">
       <DependentUpon>CrearTrigger.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearView.resx">
+      <DependentUpon>CrearView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarIndices.resx">
       <DependentUpon>ListarIndices.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +235,17 @@
     <EmbeddedResource Include="ModificaInidces.resx">
       <DependentUpon>ModificaInidces.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificaProcedures.resx">
+      <DependentUpon>ModificaProcedures.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificaTablas.resx">
       <DependentUpon>ModificaTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaTriggers.resx">
+      <DependentUpon>ModificaTriggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaViews.resx">
+      <DependentUpon>ModificaViews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

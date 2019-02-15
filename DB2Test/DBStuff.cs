@@ -126,6 +126,24 @@ namespace DB2Test
             }
         }
 
+        public string ddl(string q)
+        {
+
+            string v = "";
+            DB2Command cmd = new DB2Command(q, connect);
+            if (!connect.IsOpen) { connect.Open(); }
+            using(DB2DataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    v = dr.GetString(0);
+                }
+                dr.Close();
+            }
+            connect.Close();
+            return v;
+        }
+        
         public string getType(string col, string tab)
         {
             string v = "";
