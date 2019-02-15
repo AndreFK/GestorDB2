@@ -16,7 +16,7 @@ namespace DB2Test
         public ListarTriggers()
         {
             InitializeComponent();
-            string q = "select trigname as Nombre from syscat.triggers where owner = 'USUARIO'";
+            string q = "select trigname as Nombre, text as DDL from syscat.triggers where owner = 'USUARIO'";
             tool.fillDataGrid(dgv,q);
         }
 

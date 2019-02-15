@@ -45,12 +45,6 @@ namespace DB2Test
             ListarViews form = new ListarViews();
             form.Show();
         }
-        /*private void crearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CrearTablas form = new CrearTablas();
-            form.Show();
-        }*/
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {

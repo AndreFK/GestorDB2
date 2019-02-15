@@ -11,8 +11,6 @@ namespace DB2Test
 {
     class DBStuff
     {
-        
-
         DB2Connection connect = new DB2Connection("Server = localhost:50000; Database = DBNAMES; UID = USUARIO; PWD = smonkw33d");
 
         public void fillComboDB(ComboBox c, string query)
@@ -92,6 +90,25 @@ namespace DB2Test
             }
         }
 
+        public void dropCmd(string query, string bkp)
+        {
+
+            DB2Command cmd = new DB2Command(query, connect);
+            connect.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                connect.Close();
+            }
+            catch (DB2Exception e)
+            {
+                DB2Command cm = new DB2Command(bkp, connect);
+                cm.ExecuteNonQuery();
+                System.Windows.Forms.MessageBox.Show(e.ToString());
+                connect.Close();
+            }
+        }
+
         public void sendCmd(string query)
         {
          
@@ -114,15 +131,18 @@ namespace DB2Test
             string v = "";
             try
             {
-                DB2Command cmd = new DB2Command("select colname from syscat.columns where tabname = '" + tab + "' and colname = '" + col + "'", connect);
-                connect.Open();
+                DB2Command cmd = new DB2Command("select typename from syscat.columns where tabname = '" + tab + "' and colname = '" + col + "'", connect);
+                if (!connect.IsOpen) { connect.Open(); }
                 using (DB2DataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        v = dr.GetDataTypeName(0);
+                        v = dr.GetString(0);
                     }
-                    dr.Close();
+                    if (!dr.IsClosed)
+                    {
+                        dr.Close();
+                    }
                 }
                 connect.Close();
             }
@@ -130,6 +150,28 @@ namespace DB2Test
             {
                 System.Windows.Forms.MessageBox.Show(e.ToString());
                 connect.Close();
+            }
+            return v;
+        }
+
+        private string Type(string col, string tab)
+        {
+            string v = "";
+            try
+            {
+                DB2Command cmd = new DB2Command("select typename from syscat.columns where tabname = '" + tab + "' and colname = '" + col + "'", connect);
+                if (!connect.IsOpen) { connect.Open(); }
+                using (DB2DataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        v = dr.GetString(0);
+                    }
+                }
+            }
+            catch (DB2Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.ToString());
             }
             return v;
         }
@@ -149,6 +191,15 @@ namespace DB2Test
                 return "Index";
             }
             else return "No";
+        }
+
+        public string scriptPk(string col, string tab)
+        {
+            if(!ispk(col, tab))
+            {
+                return "Nada";
+            }
+            return "alter table " + tab + " add primary key (" + col + ")";
         }
 
         private bool ispk(string col, string tab)
@@ -208,10 +259,7 @@ namespace DB2Test
                 connect.Close();
                 v = "alter table " + tab + " add constraint " + col + "_FK foreign key (" + col + ") references " + tref + " (" + cref + ") not enforced";
                 return v;
-            
         }
-
-        //Hacer scrippk e index HOY
 
         public bool isfk(string col, string tab)
         {
@@ -245,12 +293,22 @@ namespace DB2Test
             }
         }
 
+        public string scriptInd(string col, string tab)
+        {
+            string idx = col + "_IDX";
+            if(!isindex(idx, tab))
+            {
+                return "Nada";
+            }
+            return "create unique index " + idx + " on " + tab + "(" + col + ")";
+        }
+
         public bool isindex(string col, string tab)
         {
             string v = "";
             try
             {
-                DB2Command cmd = new DB2Command("select name from sysibm.sysindexes where  name = '" + col + "' and tbname = '" + tab + "'", connect);
+                DB2Command cmd = new DB2Command("select name from sysibm.sysindexes where  name = '" + col + "' and tbname = '" + tab + "' and tbcreator = 'USUARIO'", connect);
                 connect.Open();
                 using (DB2DataReader dr = cmd.ExecuteReader())
                 {
@@ -275,15 +333,6 @@ namespace DB2Test
             {
                 return true;
             }
-        }
-
-
-
-        public string getValue(string v, string tab)
-        {
-            string q = "";
-            DB2Command cmd = new DB2Command("seelect * from " + tab, connect);
-            return q;
         }
 
         public string PoC(string name)
@@ -311,33 +360,23 @@ namespace DB2Test
                 connect.Close();
             }
             return v;
-        }
+        } 
 
-        public string PoCDDL(string name)
+        public string coltab(string col)
         {
             string v = "";
-            DB2Command cmd = new DB2Command("select substr(text, 1, 80) from syscat.routines where routinename = '"+ name + "'", connect);
-            cmd.CommandType = CommandType.Text;
-            try
+            DB2Command cmd = new DB2Command("select tabname from syscat.columns where colname = '" + col + "'", connect);
+            if (!connect.IsOpen) { connect.Open(); }
+            using(DB2DataReader dr = cmd.ExecuteReader())
             {
-                connect.Open();
-                using (DB2DataReader dr = cmd.ExecuteReader())
+                while (dr.Read())
                 {
-                    while (dr.Read())
-                    {
-                        v = dr.GetString(0);
-                    }
-                    dr.Close();
+                    v = dr.GetString(0);
                 }
-                connect.Close();
+                dr.Close();
             }
-            catch(DB2Exception e)
-            {
-                System.Windows.Forms.MessageBox.Show(e.ToString());
-                connect.Close();
-            }
+            connect.Close();
             return v;
         }
-
     }
 }

@@ -82,6 +82,18 @@
     <Compile Include="CrearIndice.Designer.cs">
       <DependentUpon>CrearIndice.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearProcedure.Designer.cs">
+      <DependentUpon>CrearProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearTrigger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearTrigger.Designer.cs">
+      <DependentUpon>CrearTrigger.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBStuff.cs" />
     <Compile Include="ListarIndices.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,12 @@
     <Compile Include="ListarViews.Designer.cs">
       <DependentUpon>ListarViews.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificaInidces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaInidces.Designer.cs">
+      <DependentUpon>ModificaInidces.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificaTablas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +162,7 @@
     <Compile Include="ScriptTabla.Designer.cs">
       <DependentUpon>ScriptTabla.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSrcipt.cs" />
     <EmbeddedResource Include="BorrarIndices.resx">
       <DependentUpon>BorrarIndices.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +181,12 @@
     <EmbeddedResource Include="CrearIndice.resx">
       <DependentUpon>CrearIndice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearProcedure.resx">
+      <DependentUpon>CrearProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearTrigger.resx">
+      <DependentUpon>CrearTrigger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarIndices.resx">
       <DependentUpon>ListarIndices.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListarViews.resx">
       <DependentUpon>ListarViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaInidces.resx">
+      <DependentUpon>ModificaInidces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificaTablas.resx">
       <DependentUpon>ModificaTablas.cs</DependentUpon>

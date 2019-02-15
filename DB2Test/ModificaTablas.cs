@@ -60,6 +60,7 @@ namespace DB2Test
             valorViejo.Text = "Valor";
             valorViejo.Items.Clear();
             string query = "select " + colName.Text + " from " + tablesNames.Text;
+            textBox1.Text = tool.getType(colName.Text, tablesNames.Text);
             tool.fillComboDB(this.valorViejo, query);
             
         }
@@ -73,7 +74,6 @@ namespace DB2Test
             else
             {
                string query = updateQuery(tablesNames, colName, valorViejo, valorNuevo);
-               //System.Windows.Forms.MessageBox.Show(query);
                tool.sendCmd(query);
            }
             resetall();
@@ -88,7 +88,7 @@ namespace DB2Test
         {
             string query = "";
             string type = tool.getType(col.Text, t.Text);
-            if(type == "VARCHAR" || type == "CHAR")
+            if(type == "VARCHAR" || type == "CHARACTER")
             {
                 query = "update " + t.Text + " set " + col.Text + " = '" + vn.Text + "' where " + col.Text + " = '" + vv.Text + "'";
                 
@@ -135,7 +135,7 @@ namespace DB2Test
             if (checkIfOne())
             {
                 string type = tool.getType(dgv.Columns[0].Name, tablesNames.Text);
-                if(type == "VARCHAR" || type == "CHAR")
+                if(type == "VARCHAR" || type == "CHARACTER")
                 {
                     q = "insert into " + tablesNames.Text + " values ('" + dgv.Rows[ro].Cells[cols].Value + "')";
                 }
@@ -216,6 +216,7 @@ namespace DB2Test
             ListarViews form = new ListarViews();
             form.Show();
         }
+
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

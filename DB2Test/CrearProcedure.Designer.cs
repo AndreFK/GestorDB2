@@ -1,6 +1,6 @@
 ﻿namespace DB2Test
 {
-    partial class ModificaTablas
+    partial class CrearProcedure
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.valorNuevo = new System.Windows.Forms.TextBox();
-            this.actualizarBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.valorViejo = new System.Windows.Forms.ComboBox();
-            this.colName = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tablesNames = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.insertBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tablasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,161 +59,20 @@
             this.modificarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarDDLToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.proc = new System.Windows.Forms.TextBox();
+            this.func = new System.Windows.Forms.TextBox();
+            this.dgvproc = new System.Windows.Forms.DataGridView();
+            this.dgvfunc = new System.Windows.Forms.DataGridView();
+            this.crearproc = new System.Windows.Forms.Button();
+            this.crearfunc = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfunc)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(17, 19);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(465, 337);
-            this.dgv.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgv);
-            this.groupBox1.Location = new System.Drawing.Point(444, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 350);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Valores";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.valorNuevo);
-            this.groupBox2.Controls.Add(this.actualizarBtn);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.valorViejo);
-            this.groupBox2.Controls.Add(this.colName);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.tablesNames);
-            this.groupBox2.Location = new System.Drawing.Point(13, 32);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(412, 245);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modificar";
-            // 
-            // valorNuevo
-            // 
-            this.valorNuevo.Location = new System.Drawing.Point(276, 127);
-            this.valorNuevo.Name = "valorNuevo";
-            this.valorNuevo.Size = new System.Drawing.Size(121, 20);
-            this.valorNuevo.TabIndex = 9;
-            // 
-            // actualizarBtn
-            // 
-            this.actualizarBtn.Location = new System.Drawing.Point(170, 192);
-            this.actualizarBtn.Name = "actualizarBtn";
-            this.actualizarBtn.Size = new System.Drawing.Size(75, 23);
-            this.actualizarBtn.TabIndex = 8;
-            this.actualizarBtn.Text = "Actualizar";
-            this.actualizarBtn.UseVisualStyleBackColor = true;
-            this.actualizarBtn.Click += new System.EventHandler(this.actualizarBtn_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(203, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Valor nuevo:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Valor viejo:";
-            // 
-            // valorViejo
-            // 
-            this.valorViejo.FormattingEnabled = true;
-            this.valorViejo.Location = new System.Drawing.Point(74, 127);
-            this.valorViejo.Name = "valorViejo";
-            this.valorViejo.Size = new System.Drawing.Size(121, 21);
-            this.valorViejo.TabIndex = 5;
-            this.valorViejo.SelectedIndexChanged += new System.EventHandler(this.valorViejo_SelectedIndexChanged);
-            // 
-            // colName
-            // 
-            this.colName.FormattingEnabled = true;
-            this.colName.Location = new System.Drawing.Point(276, 65);
-            this.colName.Name = "colName";
-            this.colName.Size = new System.Drawing.Size(121, 21);
-            this.colName.TabIndex = 3;
-            this.colName.SelectedIndexChanged += new System.EventHandler(this.colName_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(216, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Columna: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tabla:";
-            // 
-            // tablesNames
-            // 
-            this.tablesNames.FormattingEnabled = true;
-            this.tablesNames.Location = new System.Drawing.Point(74, 65);
-            this.tablesNames.Name = "tablesNames";
-            this.tablesNames.Size = new System.Drawing.Size(121, 21);
-            this.tablesNames.TabIndex = 0;
-            this.tablesNames.SelectedIndexChanged += new System.EventHandler(this.tablesNames_SelectedIndexChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.insertBtn);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(13, 283);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(412, 99);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Insertar";
-            // 
-            // insertBtn
-            // 
-            this.insertBtn.Location = new System.Drawing.Point(170, 61);
-            this.insertBtn.Name = "insertBtn";
-            this.insertBtn.Size = new System.Drawing.Size(75, 23);
-            this.insertBtn.TabIndex = 1;
-            this.insertBtn.Text = "Insertar";
-            this.insertBtn.UseVisualStyleBackColor = true;
-            this.insertBtn.Click += new System.EventHandler(this.insertBtn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(396, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Escriba los nuevos elementos dentro de la tabla y haga click en el boton \"Inserta" +
-    "r\"\r\n";
             // 
             // menuStrip1
             // 
@@ -240,8 +84,8 @@
             this.viewsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(954, 24);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tablasToolStripMenuItem
@@ -261,14 +105,12 @@
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem.Text = "Listar";
-            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.crearToolStripMenuItem.Text = "Crear";
-            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
@@ -281,7 +123,6 @@
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
             this.borrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
-            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
             // mostrarDDLToolStripMenuItem
             // 
@@ -348,7 +189,6 @@
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
             this.listarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
-            this.listarToolStripMenuItem2.Click += new System.EventHandler(this.listarToolStripMenuItem2_Click);
             // 
             // crearToolStripMenuItem2
             // 
@@ -458,34 +298,100 @@
             this.mostrarDDLToolStripMenuItem4.Size = new System.Drawing.Size(140, 22);
             this.mostrarDDLToolStripMenuItem4.Text = "Mostrar DDL";
             // 
-            // textBox1
+            // groupBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.groupBox1.Controls.Add(this.crearproc);
+            this.groupBox1.Controls.Add(this.dgvproc);
+            this.groupBox1.Controls.Add(this.proc);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(775, 223);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Procedures";
             // 
-            // ModificaTablas
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.crearfunc);
+            this.groupBox2.Controls.Add(this.dgvfunc);
+            this.groupBox2.Controls.Add(this.func);
+            this.groupBox2.Location = new System.Drawing.Point(13, 257);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(775, 214);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Funciones";
+            // 
+            // proc
+            // 
+            this.proc.Location = new System.Drawing.Point(7, 20);
+            this.proc.Multiline = true;
+            this.proc.Name = "proc";
+            this.proc.Size = new System.Drawing.Size(227, 160);
+            this.proc.TabIndex = 0;
+            // 
+            // func
+            // 
+            this.func.Location = new System.Drawing.Point(7, 19);
+            this.func.Multiline = true;
+            this.func.Name = "func";
+            this.func.Size = new System.Drawing.Size(227, 160);
+            this.func.TabIndex = 1;
+            // 
+            // dgvproc
+            // 
+            this.dgvproc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproc.Location = new System.Drawing.Point(241, 20);
+            this.dgvproc.Name = "dgvproc";
+            this.dgvproc.Size = new System.Drawing.Size(528, 160);
+            this.dgvproc.TabIndex = 1;
+            // 
+            // dgvfunc
+            // 
+            this.dgvfunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfunc.Location = new System.Drawing.Point(241, 20);
+            this.dgvfunc.Name = "dgvfunc";
+            this.dgvfunc.Size = new System.Drawing.Size(528, 159);
+            this.dgvfunc.TabIndex = 2;
+            // 
+            // crearproc
+            // 
+            this.crearproc.Location = new System.Drawing.Point(7, 187);
+            this.crearproc.Name = "crearproc";
+            this.crearproc.Size = new System.Drawing.Size(75, 23);
+            this.crearproc.TabIndex = 2;
+            this.crearproc.Text = "Crear";
+            this.crearproc.UseVisualStyleBackColor = true;
+            this.crearproc.Click += new System.EventHandler(this.crearproc_Click);
+            // 
+            // crearfunc
+            // 
+            this.crearfunc.Location = new System.Drawing.Point(7, 184);
+            this.crearfunc.Name = "crearfunc";
+            this.crearfunc.Size = new System.Drawing.Size(75, 23);
+            this.crearfunc.TabIndex = 3;
+            this.crearfunc.Text = "Crear";
+            this.crearfunc.UseVisualStyleBackColor = true;
+            this.crearfunc.Click += new System.EventHandler(this.crearfunc_Click);
+            // 
+            // CrearProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 401);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(800, 505);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ModificaTablas";
-            this.Text = "Gestor";
-            this.Load += new System.EventHandler(this.ModificaTablas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Name = "CrearProcedure";
+            this.Text = "CrearProcedure";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfunc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,25 +399,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox tablesNames;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox colName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox valorViejo;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button actualizarBtn;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button insertBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tablasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem proceduresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem triggersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
@@ -523,22 +412,31 @@
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proceduresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem triggersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem viewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem mostrarDDLToolStripMenuItem4;
-        private System.Windows.Forms.TextBox valorNuevo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button crearproc;
+        private System.Windows.Forms.DataGridView dgvproc;
+        private System.Windows.Forms.TextBox proc;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button crearfunc;
+        private System.Windows.Forms.DataGridView dgvfunc;
+        private System.Windows.Forms.TextBox func;
     }
 }
