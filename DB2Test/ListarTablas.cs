@@ -36,6 +36,8 @@ namespace DB2Test
             string query = "select * from " + tables.Text;
             tool.fillDataGrid(dgv, query);
         }
+
+
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

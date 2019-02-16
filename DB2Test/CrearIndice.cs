@@ -302,5 +302,10 @@ namespace DB2Test
             BorrarViews form = new BorrarViews();
             form.Show();
         }
+
+        private void colidx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = tool.isInd(colidx.Text + "_IDX", tabidx.Text);
+        }
     }
 }

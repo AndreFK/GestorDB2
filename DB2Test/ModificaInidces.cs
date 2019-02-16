@@ -18,23 +18,28 @@ namespace DB2Test
         public ModificaInidces()
         {
             InitializeComponent();
-            string q = "select colname from syscat.keycoluse where tabschema = 'USUARIO'";
-            string qfk = "select ref.constname from syscat.keycoluse as key inner join syscat.references as ref on key.constname = ref.refkeyname ";
-            string qi = "select name from sysibm.sysindexes where tbcreator = 'USUARIO' and uniquerule = 'U'";
+
+            string pkt = "select name from sysibm.systables where creator  = 'USUARIO'";
 
             string qdgv = "select colname as PK, tabname as Tabla from syscat.keycoluse where tabschema = 'USUARIO'";
             string qfkdgv = "select ref.constname as FK, ref.tabname as Tabla, key.colname as Ref_Col, key.tabname as Ref_Tabla from syscat.keycoluse as key inner join syscat.references as ref on key.constname = ref.refkeyname ";
             string qidgv = "select name as Indice, tbname as Tabla, uniquerule as Es_Unico from sysibm.sysindexes where tbcreator = 'USUARIO' and uniquerule = 'U'";
 
-            tool.fillComboDB(this.pk, q);
-            tool.fillComboDB(this.fk, qfk);
-            tool.fillComboDB(this.idx, qi);
+            
+            tool.fillComboDB(comboBox1, pkt);
+            tool.fillComboDB(comboBox2, pkt);
+            tool.fillComboDB(comboBox3, pkt);
+
+            
+            
+            
+
 
             tool.fillDataGrid(dgvpk, qdgv);
             tool.fillDataGrid(dataGridView1, qfkdgv);
             tool.fillDataGrid(dgvidx, qidgv);
 
-            textBox1.Text = "alter table _____ add primary key (_____)";
+          //  textBox1.Text = "alter table _____ add primary key (_____)";
             textBox2.Text = "alter table _____ add constraint _____|_FK foreign key (_____) references _____ (_____) not enforced";
             textBox3.Text = "create unique index _____ on _____ (______)";
 
@@ -43,36 +48,36 @@ namespace DB2Test
 
         private void pk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tab = tool.coltab(pk.Text);
-            textBox1.Text = ts.script_Pk(pk.Text, tab);
+            string tab = "select colname from syscat.columns where tabname = '"+ comboBox1.Text +"' and colname != '" + pk.Text +"'";
+            tool.fillComboDB(comboBox4, tab);
         }
 
         private void fk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tab = tool.coltab(fk.Text.Remove(fk.Text.Length - 3));
+            string tab = comboBox2.Text;//tool.coltab(fk.Text.Remove(fk.Text.Length - 3));
             textBox2.Text = ts.scriptFK(fk.Text.Remove(fk.Text.Length - 3), tab);
         }
 
         private void idx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tab = tool.coltab(idx.Text.Remove(idx.Text.Length - 4));
+            string tab = comboBox3.Text;//tool.coltab(idx.Text.Remove(idx.Text.Length - 4));
             textBox3.Text = ts.script_Ind(idx.Text, tab);
         }
 
         private void addpk_Click(object sender, EventArgs e)
         {
-            string tab = tool.coltab(pk.Text);
-            string text = tool.scriptInd(pk.Text, tab);
-            string query = "alter table " + tab + " drop primary key " + pk.Text;
+            string tab = comboBox1.Text;
+            string text = tool.scriptPk(pk.Text, tab);
+            string query = "alter table " + tab + " drop primary key";
             tool.dropCmd(query, text);
-            tool.sendCmd(textBox1.Text);
+            tool.sendCmd("alter table " + tab + " add primary key (" + comboBox4.Text + ")");
             tool.fillDataGrid(dgvpk, "select colname as PK, tabname as Tabla from syscat.keycoluse where tabschema = 'USUARIO'");
         }
 
         private void addfk_Click(object sender, EventArgs e)
         {
-            string tab = tool.coltab(fk.Text);
-            string text = tool.scriptInd(fk.Text, tab);
+            string tab = comboBox2.Text;
+            string text = tool.scriptFK(fk.Text, tab);
             string query = "alter table " + tab + " drop foreign key " + fk.Text;
             tool.dropCmd(query, text);
             tool.sendCmd(textBox2.Text);
@@ -81,7 +86,7 @@ namespace DB2Test
 
         private void addidx_Click(object sender, EventArgs e)
         {
-            string tab = tool.coltab(idx.Text);
+            string tab = comboBox3.Text;
             string text = tool.scriptInd(idx.Text, tab);
             string query = "drop index " + idx.Text;
             tool.dropCmd(query, text);
@@ -246,6 +251,24 @@ namespace DB2Test
             this.Hide();
             BorrarViews form = new BorrarViews();
             form.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string q = "select colname from syscat.keycoluse where tabschema = 'USUARIO' and tabname = '" + comboBox1.Text + "'";
+            tool.fillComboDB(this.pk, q);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string qfk = "select ref.constname from syscat.keycoluse as key inner join syscat.references as ref on key.constname = ref.refkeyname  and key.tabname = '" + comboBox2.Text + "'";
+            tool.fillComboDB(this.fk, qfk);
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string qi = "select name from sysibm.sysindexes where tbcreator = 'USUARIO' and uniquerule = 'U' and tbname = '" + comboBox3.Text + "'";
+            tool.fillComboDB(this.idx, qi);
         }
     }
 }
